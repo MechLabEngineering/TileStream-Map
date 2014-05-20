@@ -1,0 +1,103 @@
+<html>
+<head>
+    <title>ÖPNV Fahrzeit Heatmap Berlin: Flughafen Tegel</title>
+    <meta charset="utf-8" />
+    <link rel="stylesheet" href="http://cdn.leafletjs.com/leaflet-0.6.4/leaflet.css" />
+    <!--[if lte IE 8]><link rel="stylesheet" href="http://cdn.leafletjs.com/leaflet-0.6.4/leaflet.ie.css" /><![endif]-->
+    <script src="http://cdn.leafletjs.com/leaflet-0.6.4/leaflet.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.4.4/jquery.min.js" type="text/javascript" charset="utf-8"></script>
+    <script>
+        $(document).ready(function(){
+ 
+            var map = new L.Map('map').setView([52.5234, 13.41139], 12);
+
+	    var attr = 'Fahrplandaten unter CC-BY Lizenz VBB Verkehrsverbund Berlin-Brandenburg GmbH, &copy;OpenStreetMaps-Mitwirkende'
+
+            //change and supply your static ip and cache name 
+            var tileLayer = L.tileLayer('http://host.mechlab-engineering.de:8888/v2/OPNVHeatmapBerlin/{z}/{x}/{y}.png',{
+			maxZoom: 16,
+			minZoom: 12,
+			attribution: attr
+			});
+ 
+            map.addLayer(tileLayer);
+        });
+    </script>
+
+</head>
+<body>
+    <div id="map" style="width: 100%; height: 100%; position: relative;">
+
+
+<div class='my-legend'>
+<div class='legend-title'>Fahrzeit ab<br>Flughafen Tegel</div>
+<div class='legend-scale'>
+  <ul class='legend-labels'>
+    <li><span style='background:#4756fb;'></span>10min</li>
+    <li><span style='background:#0fa2ef;'></span>20min</li>
+    <li><span style='background:#2adcdc;'></span>30min</li>
+    <li><span style='background:#62fac3;'></span>40min</li>
+    <li><span style='background:#9cfaa3;'></span>50min</li>
+    <li><span style='background:#d4dc7f;'></span>60min</li>
+    <li><span style='background:#ffa256;'></span>70min</li>
+    <li><span style='background:#ff562b;'></span>80min</li>
+    <li><span style='background:#ff0000;'></span>90min</li>
+  </ul>
+</div>
+<div class='legend-source'>Quelle: <a href='http://daten.berlin.de/datensaetze/vbb-gtfs-daten-jun-dez-2013'>VBB</a></div>
+</div>
+</div>
+
+
+<style type='text/css'>
+  .my-legend .legend-title {
+    text-align: left;
+    margin-bottom: 5px;
+    font-weight: bold;
+    font-size: 90%;
+    }
+  .my-legend .legend-scale ul {
+    margin: 0;
+    margin-bottom: 5px;
+    padding: 0;
+    float: left;
+    list-style: none;
+    }
+  .my-legend .legend-scale ul li {
+    font-size: 80%;
+    list-style: none;
+    margin-left: 0;
+    line-height: 18px;
+    margin-bottom: 2px;
+    }
+  .my-legend ul.legend-labels li span {
+    display: block;
+    float: left;
+    height: 16px;
+    width: 30px;
+    margin-right: 5px;
+    margin-left: 0;
+    border: 1px solid #999;
+    }
+  .my-legend .legend-source {
+    font-size: 70%;
+    color: #999;
+    clear: both;
+    }
+  .my-legend a {
+    color: #777;
+    }
+  .my-legend {
+    position: absolute;
+    z-index: 2;
+    width: 200px;
+    height: 400px;
+    right: 5px;
+    background-color: rgba (255, 255, 255, 0.4);
+    }
+</style>
+
+
+
+</body>
+</html>
