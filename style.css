@@ -17,6 +17,21 @@ h1{
 	font-size: 2em;
 }
 
+#logo {
+	background:url(Logo.png) no-repeat;
+	width:200px;
+	height:21px;
+	left: 10px;
+	bottom: 10px;
+	position: absolute;
+	z-index: 2;
+}
+
+.addthis_toolbox{
+	position:absolute;
+	z-index:2;
+}
+
 #map {
 	width: 100%;
 	height: 100%;
