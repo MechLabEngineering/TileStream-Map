@@ -15,3 +15,5 @@ Delivers a Map from .mbtiles file from local Server
     e.g. `python -m SimpleHTTPServer 8080`
     
 Now your own Tile Server is up and running to provide a map online out of a `.mbtiles` file.
+
+![Screenshot](Heatmap20.png)
