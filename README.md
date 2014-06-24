@@ -60,3 +60,21 @@ Now your own Tile Server is up and running to provide a map online out of a `.mb
 8. `service apache2 restart`
 
 Jetzt müsste die Karte unter [http://host.mechlab-engineering.de/~heatmapberlintegel/](http://host.mechlab-engineering.de/~heatmapberlintegel/) erreichbar sein
+
+### Get the cronjob start the server
+
+Create a `startserver.sh` file with
+
+```
+#!/bin/bash
+echo "Starte Tilestream Server..."
+DATE=`date +%Y-%m-%d-%H-%M`
+/usr/local/bin/node /var/www/tilestream/index.js start --tileHost="host.mechlab-engineering.de" &> /var/www/tilestream/logs/${DATE}.txt &
+echo "done"
+```
+
+and put it to `sudo crontab -e` with
+
+`@reboot /var/www/tilestream/startserver.sh`
+
+Done.
