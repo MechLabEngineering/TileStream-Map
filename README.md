@@ -8,6 +8,7 @@ Delivers a Map from .mbtiles file from local Server
 
 1. Create a map with [TileMill](https://www.mapbox.com/tilemill/) and export as `.mbtiles` file.
 2. copy local `.mbtiles` file to server with `scp <mymap>.mbtiles <user>@<server-adress>.de:/path/to/mymap/`
+   * default path on server is `~/Documents/MapBox/tiles`
 3. get [TileStream](https://github.com/mapbox/tilestream) up and running
    * `cd /usr/src`
    * `git clone https://github.com/joyent/node.git`
